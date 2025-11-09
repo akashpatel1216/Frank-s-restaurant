@@ -15,7 +15,7 @@ type MenuSection = {
   items: MenuItem[]
 }
 
-const menuSections: Record<string, MenuSection> = {
+const menuSections = {
   earlybird: {
     title: "EARLY BIRD",
     subtitle: "Includes Soup or Salad & 1 Side",
@@ -240,12 +240,14 @@ const menuSections: Record<string, MenuSection> = {
       { name: "Cheese", desc: "", price: 1.00 },
     ]
   },
-}
+} satisfies Record<string, MenuSection>
+
+type MenuCategory = keyof typeof menuSections
 
 export default function MenuPreview() {
-  const [activeTab, setActiveTab] = useState('earlybird')
+  const [activeTab, setActiveTab] = useState<MenuCategory>('earlybird')
 
-  const categoryLabels: Record<string, string> = {
+  const categoryLabels: Record<MenuCategory, string> = {
     earlybird: 'EARLY BIRD',
     appetizers: 'APPETIZERS',
     lunch: 'LUNCH',
@@ -298,7 +300,7 @@ export default function MenuPreview() {
 
             {/* Category Tabs - Scrollable */}
             <div className="flex border-b-2 border-diner-dark bg-diner-cream overflow-x-auto">
-              {Object.keys(menuSections).map((category) => (
+              {(Object.keys(menuSections) as MenuCategory[]).map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveTab(category)}
@@ -328,13 +330,13 @@ export default function MenuPreview() {
               </div>
 
               <div className="space-y-3">
-                {menuSections[activeTab as keyof typeof menuSections].items.map((item, idx) => (
+                {menuSections[activeTab].items.map((item, idx) => (
                   <div key={idx} className="border-b border-dashed border-diner-dark/30 pb-3 hover:bg-diner-yellow/10 px-2 transition-all cursor-pointer group">
                     <div className="flex justify-between items-start gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="font-bold text-diner-dark text-base">
-                            {item.name}
+                          {item.name}
                           </span>
                           {item.hot && (
                             <span className="text-xs bg-diner-red text-white px-2 py-0.5 rounded">HOT</span>
