@@ -2,7 +2,20 @@
 
 import { useState } from 'react'
 
-const menuSections = {
+type MenuItem = {
+  name: string
+  desc: string
+  price: number
+  hot?: boolean
+}
+
+type MenuSection = {
+  title: string
+  subtitle?: string
+  items: MenuItem[]
+}
+
+const menuSections: Record<string, MenuSection> = {
   earlybird: {
     title: "EARLY BIRD",
     subtitle: "Includes Soup or Salad & 1 Side",
