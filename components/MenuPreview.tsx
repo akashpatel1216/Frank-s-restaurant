@@ -15,7 +15,29 @@ type MenuSection = {
   items: MenuItem[]
 }
 
-const menuSections = {
+const MENU_SECTION_KEYS = [
+  'earlybird',
+  'appetizers',
+  'lunch',
+  'clubs',
+  'wraps',
+  'hoagies',
+  'burgers',
+  'wings',
+  'dinner',
+  'pasta',
+  'salads',
+  'soup',
+  'sides',
+  'kids',
+  'drinks',
+  'desserts',
+  'extras',
+] as const
+
+type MenuCategory = (typeof MENU_SECTION_KEYS)[number]
+
+const menuSections: Record<MenuCategory, MenuSection> = {
   earlybird: {
     title: "EARLY BIRD",
     subtitle: "Includes Soup or Salad & 1 Side",
@@ -240,9 +262,7 @@ const menuSections = {
       { name: "Cheese", desc: "", price: 1.00 },
     ]
   },
-} satisfies Record<string, MenuSection>
-
-type MenuCategory = keyof typeof menuSections
+}
 
 export default function MenuPreview() {
   const [activeTab, setActiveTab] = useState<MenuCategory>('earlybird')
@@ -300,7 +320,7 @@ export default function MenuPreview() {
 
             {/* Category Tabs - Scrollable */}
             <div className="flex border-b-2 border-diner-dark bg-diner-cream overflow-x-auto">
-              {(Object.keys(menuSections) as MenuCategory[]).map((category) => (
+              {MENU_SECTION_KEYS.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveTab(category)}
