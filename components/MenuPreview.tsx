@@ -317,17 +317,17 @@ export default function MenuPreview() {
 
             {/* Menu Items - Receipt Style */}
             <div className="p-6 md:p-8 font-mono text-sm max-h-[600px] overflow-y-auto">
-              {/* Section Title */}
-              <div className="mb-4 pb-2 border-b-2 border-diner-dark">
-                <h3 className="text-2xl font-bold text-diner-red uppercase">
-                  {menuSections[activeTab as keyof typeof menuSections].title}
-                </h3>
-                {menuSections[activeTab as keyof typeof menuSections].subtitle && (
-                  <p className="text-xs text-diner-dark/70 mt-1 italic">
-                    {menuSections[activeTab as keyof typeof menuSections].subtitle}
-                  </p>
-                )}
-              </div>
+              {(() => {
+                const section = menuSections[activeTab]
+                return (
+                  <div className="mb-4 pb-2 border-b-2 border-diner-dark">
+                    <h3 className="text-2xl font-bold text-diner-red uppercase">{section.title}</h3>
+                    {section.subtitle && (
+                      <p className="text-xs text-diner-dark/70 mt-1 italic">{section.subtitle}</p>
+                    )}
+                  </div>
+                )
+              })()}
 
               <div className="space-y-3">
                 {menuSections[activeTab].items.map((item, idx) => (
