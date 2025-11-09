@@ -1,15 +1,15 @@
-# Frank's Diner - Classic American Restaurant Website
+# Frank's Restaurant & Bar - Classic American Hangout
 
-A unique, retro-modern American diner website built with Next.js, React, and Tailwind CSS.
+A unique, retro-modern American restaurant and bar experience built with Next.js, React, and Tailwind CSS.
 
 ## 🍔 Features
 
 - **Responsive Design** - Beautiful on all devices
 - **Modern UI/UX** - Retro aesthetic meets modern design principles
 - **Full Menu Section** - Showcase your delicious offerings
-- **Contact Form** - Easy customer communication
+- **Signature Cocktails Highlight** - Celebrate your bar program
 - **About Section** - Share your story
-- **24/7 Availability** - Always open, just like a real diner!
+- **Happy Hour Friendly Layout** - Perfect for promoting specials
 
 ## 🚀 Getting Started
 

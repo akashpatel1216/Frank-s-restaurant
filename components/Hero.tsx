@@ -19,11 +19,11 @@ export default function Hero() {
         backgroundImage: 'repeating-conic-gradient(#1D3557 0% 25%, transparent 0% 50%) 50% / 40px 40px'
       }}></div>
 
-      {/* Main Content - Diner Booth Style */}
+      {/* Main Content - Lounge Booth Style */}
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-6xl mx-auto">
           
-          {/* Vintage Diner Sign Board */}
+          {/* Vintage Sign Board */}
           <div className="bg-diner-dark border-8 border-diner-yellow p-8 md:p-12 mb-12 relative transform -rotate-1 shadow-2xl">
             <div className="absolute -top-4 -right-4 bg-diner-red text-white px-6 py-3 font-bold text-xl transform rotate-12 shadow-lg border-4 border-white">
               FAMILY OWNED
@@ -31,10 +31,13 @@ export default function Hero() {
             
             <div className="text-center">
               <div className="text-diner-yellow text-sm tracking-[0.3em] mb-2">LOCALLY LOVED</div>
-              <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-4" style={{
-                textShadow: '3px 3px 0 #E63946, 6px 6px 0 #FFB703'
-              }}>
-                FRANK'S DINER
+              <h1
+                className="text-5xl md:text-7xl font-display font-bold text-white mb-4"
+                style={{
+                  textShadow: '3px 3px 0 #E63946, 6px 6px 0 #FFB703',
+                }}
+              >
+                FRANK'S RESTAURANT &amp; BAR
               </h1>
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="h-1 w-20 bg-diner-yellow"></div>

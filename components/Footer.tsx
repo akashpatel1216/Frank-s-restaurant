@@ -12,8 +12,11 @@ export default function Footer() {
           <div className="mb-6">
             <div className="text-5xl font-display font-bold inline-block">
               <span className="text-diner-yellow neon-text">FRANK'S</span>
-              <span className="block text-3xl text-diner-red mt-2" style={{textShadow: '0 0 10px #E63946'}}>
-                ◆ DINER ◆
+              <span
+                className="block text-3xl text-diner-red mt-2"
+                style={{ textShadow: '0 0 10px #E63946' }}
+              >
+                ◆ RESTAURANT &amp; BAR ◆
               </span>
             </div>
           </div>
@@ -36,10 +39,6 @@ export default function Footer() {
               <p className="text-sm text-diner-cream/70 mt-2">
                 15925 US-19, Hudson, FL 34667
               </p>
-            </div>
-            <div>
-              <div className="text-sm font-bold text-diner-yellow uppercase">Get there</div>
-              <p className="text-sm text-diner-cream/70 mt-2">46 min</p>
             </div>
             <div>
               <div className="text-sm font-bold text-diner-yellow uppercase">Phone</div>
@@ -105,9 +104,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t-2 border-diner-cream/20 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-diner-cream/60">
-            <div>
-              &copy; 2024 Frank's Diner. All rights reserved.
-            </div>
+            <div>&copy; 2024 Frank's Restaurant &amp; Bar. All rights reserved.</div>
             <div className="flex items-center gap-2">
               Made with <span className="text-diner-red text-xl animate-pulse">❤️</span> and a lot of butter
             </div>

@@ -281,14 +281,14 @@ export default function MenuPreview() {
           </div>
         </div>
 
-        {/* Diner Check Style Menu */}
+        {/* Retro Check Style Menu */}
         <div className="max-w-5xl mx-auto">
           <div className="bg-white shadow-2xl border-2 border-diner-dark relative">
             {/* Check Header */}
             <div className="bg-diner-yellow border-b-4 border-diner-dark px-6 py-4">
               <div className="flex justify-between items-center">
                 <div>
-                  <div className="font-bold text-lg">FRANK'S RESTAURANT</div>
+                  <div className="font-bold text-lg">FRANK'S RESTAURANT &amp; BAR</div>
                   <div className="text-sm">15925 US-19, Hudson, FL 34667 • (727) 268-9259</div>
                 </div>
                 <div className="text-right">

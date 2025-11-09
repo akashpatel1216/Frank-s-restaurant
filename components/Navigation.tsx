@@ -38,9 +38,7 @@ export default function Navigation() {
             <a href="#home" className="relative group">
               <div className="text-4xl md:text-5xl font-display font-bold tracking-wider">
                 <span className="text-diner-yellow neon-text animate-pulse">FRANK'S</span>
-                <span className="block text-2xl md:text-3xl text-diner-red" style={{textShadow: '0 0 10px #E63946, 0 0 20px #E63946'}}>
-                  ◆ DINER ◆
-                </span>
+                <span className="block text-xl md:text-2xl text-diner-red uppercase tracking-[0.5em]" style={{ textShadow: '0 0 10px #E63946, 0 0 20px #E63946' }}></span>
               </div>
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-diner-yellow to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </a>

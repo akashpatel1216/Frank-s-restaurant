@@ -1101,6 +1101,9 @@ video {
 .tracking-widest {
   letter-spacing: 0.1em;
 }
+.tracking-\[0\.5em\] {
+  letter-spacing: 0.5em;
+}
 .text-diner-blue {
   --tw-text-opacity: 1;
   color: rgb(69 123 157 / var(--tw-text-opacity, 1));
@@ -1288,6 +1291,11 @@ html {
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 

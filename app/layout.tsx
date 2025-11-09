@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Frank's Diner - Classic American Comfort Food",
-  description: 'Experience the golden age of American dining with a modern twist. Enjoy hearty breakfasts, legendary burgers, and good times all day.',
+  title: "Frank's Restaurant & Bar - Classic American Comfort Food",
+  description:
+    'Experience the golden age of American dining and bar culture with a modern twist. Enjoy hearty breakfasts, legendary burgers, and handcrafted cocktails all day.',
 }
 
 export default function RootLayout({
