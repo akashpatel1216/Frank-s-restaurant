@@ -1,0 +1,67 @@
+'use client'
+
+import { useMemo } from 'react'
+
+type Special = {
+  title: string
+  description: string
+  price: string
+  highlights: string[]
+  emoji: string
+}
+
+const todaySpecial: Special = {
+  title: "Chef Tony's Bone-In Ribeye",
+  description: 'Dry-aged 18oz ribeye finished with roasted garlic butter and served with truffle mash.',
+  price: '$29.99',
+  highlights: ['Aged 32 days in-house', 'Served with charred asparagus', 'Pairs beautifully with our barrel-aged Manhattan'],
+  emoji: '🥩',
+}
+
+export default function DailySpecials() {
+  const todayName = useMemo(() => new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date()), [])
+
+  return (
+    <section id="specials" className="py-16 bg-gradient-to-b from-white via-diner-cream/40 to-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(229,57,70,0.3), transparent 60%)' }} />
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-diner-yellow text-diner-dark px-8 py-4 transform rotate-1 shadow-2xl border-4 border-diner-dark">
+              <h2 className="text-4xl md:text-5xl font-display font-bold">Today&apos;s Special at Frank&apos;s</h2>
+            </div>
+            <p className="mt-6 text-diner-dark/70 text-lg max-w-2xl mx-auto">
+              From chef-driven plates to handcrafted cocktails, every night brings a new reason to stop by the bar.
+            </p>
+          </div>
+
+          <div className="bg-white border-4 border-diner-dark shadow-2xl p-8 mx-auto max-w-3xl relative overflow-hidden">
+            <div className="absolute -top-3 -right-3 bg-diner-red text-white px-4 py-2 font-bold transform rotate-6 shadow-lg border-2 border-white">
+              {todayName.toUpperCase()}
+            </div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="text-6xl">{todaySpecial.emoji}</div>
+              <div>
+                <p className="text-sm uppercase tracking-[0.4em] text-diner-dark/60">Chef&apos;s Feature</p>
+                <h3 className="text-3xl font-display font-bold text-diner-dark mt-2">{todaySpecial.title}</h3>
+              </div>
+            </div>
+            <p className="text-lg text-diner-dark/80 mb-4">{todaySpecial.description}</p>
+            <div className="inline-block bg-diner-blue text-white px-6 py-2 font-bold text-lg transform -rotate-2 shadow-lg">
+              {todaySpecial.price}
+            </div>
+            <ul className="mt-6 space-y-3 text-sm text-diner-dark/70">
+              {todaySpecial.highlights.map((highlight, idx) => (
+                <li key={idx} className="flex items-start gap-2">
+                  <span className="text-diner-red font-bold mt-1">✦</span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
